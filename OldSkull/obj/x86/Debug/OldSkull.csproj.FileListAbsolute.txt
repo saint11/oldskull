@@ -8,3 +8,8 @@ C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\bin\WindowsGL\Debug\Tao.Sdl
 C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\obj\x86\Debug\OldSkull.csprojResolveAssemblyReference.cache
 C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\obj\x86\Debug\OldSkull.exe
 C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\obj\x86\Debug\OldSkull.pdb
+C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\bin\WindowsGL\Debug\MonocleDefault.xnb
+C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\bin\WindowsGL\Debug\MonocleEngine.dll
+C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\bin\WindowsGL\Debug\MonocleEngine.pdb
+C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\bin\WindowsGL\Debug\Content\Atlas\atlas.png
+C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\bin\WindowsGL\Debug\Content\Atlas\atlas.xml

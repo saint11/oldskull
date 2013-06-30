@@ -2,6 +2,11 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual C# Express 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldSkull", "OldSkull\OldSkull.csproj", "{1A21BEE7-22DB-4721-89CF-64DB8E5B7641}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1ED44608-98CC-4E1C-97FB-39939F4648CD} = {1ED44608-98CC-4E1C-97FB-39939F4648CD}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonocleXNA", "Monocle\MonocleEngine\MonocleXNA.csproj", "{1ED44608-98CC-4E1C-97FB-39939F4648CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +18,10 @@ Global
 		{1A21BEE7-22DB-4721-89CF-64DB8E5B7641}.Debug|x86.Build.0 = Debug|x86
 		{1A21BEE7-22DB-4721-89CF-64DB8E5B7641}.Release|x86.ActiveCfg = Release|x86
 		{1A21BEE7-22DB-4721-89CF-64DB8E5B7641}.Release|x86.Build.0 = Release|x86
+		{1ED44608-98CC-4E1C-97FB-39939F4648CD}.Debug|x86.ActiveCfg = Debug|x86
+		{1ED44608-98CC-4E1C-97FB-39939F4648CD}.Debug|x86.Build.0 = Debug|x86
+		{1ED44608-98CC-4E1C-97FB-39939F4648CD}.Release|x86.ActiveCfg = Release|x86
+		{1ED44608-98CC-4E1C-97FB-39939F4648CD}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
