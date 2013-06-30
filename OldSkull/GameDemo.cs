@@ -16,10 +16,6 @@ namespace OldSkull
     public class GameDemo : Engine
     {
         static public Atlas Atlas { get; private set; }
-        //static public SpriteData SpriteData { get; private set; }
-        static public SpriteFont Font { get; private set; }
-        static public Effect LightingEffect { get; private set; }
-        static public EffectParameter LightingAlpha { get; private set; }
 
         static void Main(string[] args)
         {
@@ -28,18 +24,11 @@ namespace OldSkull
                 demo.Run();
             }
         }
-        public GameDemo()
-            : base(320, 240, 3f, "OldSkull Demo")
-        {
-           
-        }
 
-        /// <summary>
-        /// Allows the game to perform any initialization it needs to before starting to run.
-        /// This is where it can query for any required services and load any non-graphic
-        /// related content.  Calling base.Initialize will enumerate through any components
-        /// and initialize them as well.
-        /// </summary>
+        public GameDemo()
+            : base(320, 240, 60f, "OldSkull Demo")
+        {
+        }
 
         protected override void LoadContent()
         {
@@ -47,9 +36,13 @@ namespace OldSkull
             Atlas = new Atlas("Content/Atlas/atlas.xml", true);
         }
 
+        public Image image;
+        public Entity logo;
         protected override void Initialize()
         {
             base.Initialize();
+            Screen.Scale = 2f;
+            Scene = new Menu.MainMenu();
         }
 
     }
