@@ -1,0 +1,10 @@
+﻿# use glob syntax.
+syntax: glob
+*.suo
+MonocleEngine/bin/
+MonocleEngine/obj/
+MonocleDemo/bin/
+MonocleDemo/obj/
+*.db
+*.csproj.user
+*.cachefile

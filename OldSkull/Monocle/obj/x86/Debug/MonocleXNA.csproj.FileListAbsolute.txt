@@ -1,7 +1,0 @@
-C:\Users\Santo 11\Documents\Repository\Monocle\MonocleEngine\bin\x86\Debug\MonocleDefault.xnb
-C:\Users\Santo 11\Documents\Repository\Monocle\MonocleEngine\bin\x86\Debug\MonocleEngine.dll
-C:\Users\Santo 11\Documents\Repository\Monocle\MonocleEngine\bin\x86\Debug\MonocleEngine.pdb
-C:\Users\Santo 11\Documents\Repository\Monocle\MonocleEngine\obj\x86\Debug\MonocleXNA.csprojResolveAssemblyReference.cache
-C:\Users\Santo 11\Documents\Repository\Monocle\MonocleEngine\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-C:\Users\Santo 11\Documents\Repository\Monocle\MonocleEngine\obj\x86\Debug\MonocleEngine.dll
-C:\Users\Santo 11\Documents\Repository\Monocle\MonocleEngine\obj\x86\Debug\MonocleEngine.pdb
