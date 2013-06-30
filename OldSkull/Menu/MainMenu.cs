@@ -11,11 +11,8 @@ namespace OldSkull.Menu
         public override void Begin()
         {
             base.Begin();
-
-            KeyboardInput.Add("accept",Microsoft.Xna.Framework.Input.Keys.Z);
-
             SetLayer(0, new Layer());
-            Add(new Utils.Bouncer(new Image(GameDemo.Atlas["logo"])));
+            SetLayer(-1, new Layer());
         }
 
         public override void Update()

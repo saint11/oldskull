@@ -35,6 +35,17 @@ namespace OldSkull
             }
             return false;
         }
+        public static Boolean pressedInput(String name)
+        {
+            foreach (KeyAction k in keyList)
+            {
+                if (k.name == name)
+                {
+                    return k.pressed;
+                }
+            }
+            return false;
+        }
         public static void Add(String name, Keys key)
         {
             //TODO: Check for existing key.

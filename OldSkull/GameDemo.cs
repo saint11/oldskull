@@ -42,7 +42,7 @@ namespace OldSkull
         {
             base.Initialize();
             Screen.Scale = 2f;
-            Scene = new Menu.MainMenu();
+            Scene = new Template.MainMenu();
         }
 
     }
