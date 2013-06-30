@@ -6,7 +6,7 @@ using Monocle;
 
 namespace OldSkull.Menu.Utils
 {
-    class Bouncer : Entity
+    public class Bouncer : Entity
     {
         public Bouncer(Image image)
             :base(0)
@@ -22,11 +22,15 @@ namespace OldSkull.Menu.Utils
         {
             base.Update();
 
-            if (X > Engine.Instance.Screen.Width - image.Width || X<0) xSpeed *= -1;
-            if (Y > Engine.Instance.Screen.Height - image.Height || Y<0) ySpeed *= -1;
+            if (!KeyboardInput.checkInput("accept"))
+            {
 
-            X += xSpeed;
-            Y += ySpeed;
+                if (X > Engine.Instance.Screen.Width - image.Width || X<0) xSpeed *= -1;
+                if (Y > Engine.Instance.Screen.Height - image.Height || Y<0) ySpeed *= -1;
+
+                X += xSpeed;
+                Y += ySpeed;
+            }
         }
     }
 }

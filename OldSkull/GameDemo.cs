@@ -33,7 +33,7 @@ namespace OldSkull
         protected override void LoadContent()
         {
             base.LoadContent();
-            Atlas = new Atlas("Content/Atlas/atlas.xml", true);
+            Atlas = new Atlas("Assets/Content/Atlas/atlas.xml", true);
         }
 
         public Image image;
