@@ -1,0 +1,10 @@
+C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\bin\WindowsGL\Debug\SDL.dll
+C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\bin\WindowsGL\Debug\OldSkull.exe
+C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\bin\WindowsGL\Debug\OldSkull.pdb
+C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\bin\WindowsGL\Debug\Lidgren.Network.dll
+C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\bin\WindowsGL\Debug\MonoGame.Framework.dll
+C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\bin\WindowsGL\Debug\OpenTK.dll
+C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\bin\WindowsGL\Debug\Tao.Sdl.dll
+C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\obj\x86\Debug\OldSkull.csprojResolveAssemblyReference.cache
+C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\obj\x86\Debug\OldSkull.exe
+C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\obj\x86\Debug\OldSkull.pdb
