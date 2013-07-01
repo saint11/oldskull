@@ -141,5 +141,15 @@ namespace Monocle
             entity.Add(tween);
             return tween;
         }
+
+        static public Tween Alpha(Image image, float targetAlpha, int duration, Ease.Easer easer, TweenMode tweenMode = TweenMode.Oneshot)
+        {
+            Entity entity = image.Entity;
+            float startAlpha = image.Color.A/255;
+            Tween tween = new Tween(tweenMode, easer, duration, true); 
+            tween.OnUpdate = (t) => { image.Color.A = (byte) Math.Round(MathHelper.Lerp(startAlpha, targetAlpha, t.Eased)*255.0f); };
+            entity.Add(tween);
+            return tween;
+        }
     }
 }
