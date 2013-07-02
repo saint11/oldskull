@@ -28,7 +28,7 @@ namespace OldSkull.GameLevel
         public override void Added()
         {
             base.Added();
-            //Check if its on a platformerLevel
+            //TODO: Check if its on a platformerLevel
             Level = (PlatformerLevel)Scene;
             Gravity = Level.Gravity;
         }
