@@ -16,11 +16,6 @@ namespace OldSkull.Template
         {
             base.Begin();
 
-            KeyboardInput.Add("accept", Microsoft.Xna.Framework.Input.Keys.Z);
-            
-            Add(new GenericEntities.Bouncer(new Image(GameDemo.Atlas["logo"]),new Vector4(0,60,Engine.Instance.Screen.Width,Engine.Instance.Screen.Height-60)));
-
-
             //Tittle Animation
             Image titleImage = new Image(GameDemo.Atlas["title"]);
             title.Add(titleImage);
@@ -28,10 +23,20 @@ namespace OldSkull.Template
             title.Y = -titleImage.Height;
             Add(title);
             Tween.Position(title, new Vector2(title.X, 10), 100, Ease.BackOut, Tween.TweenMode.Oneshot);
-            Tween.Alpha(titleImage, 0.1f, 200, null, Tween.TweenMode.YoyoLooping);
+            //
 
-            //Layer l = new Layer()
-            //l.Effect.
+            Add(new SelectorMenu(new string[] {"menu/new","menu/exit"}, new Action[]{newGame,exitGame},SelectorMenuEffects.Scale));
+            Add(new GenericEntities.Bouncer(new Image(GameDemo.Atlas["logo"]), new Vector4(0, 60, Engine.Instance.Screen.Width, Engine.Instance.Screen.Height - 60)));
+
+        }
+
+        public void newGame()
+        {
+        }
+
+        public void exitGame()
+        {
+            Engine.Instance.Exit();
         }
     }
 }

@@ -36,12 +36,12 @@ namespace OldSkull
             Atlas = new Atlas("Assets/Content/Atlas/atlas.xml", true);
         }
 
-        public Image image;
-        public Entity logo;
         protected override void Initialize()
         {
             base.Initialize();
             Screen.Scale = 2f;
+
+            KeyboardInput.InitDefaultInput();
             Scene = new Template.MainMenu();
         }
 

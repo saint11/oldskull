@@ -4,17 +4,26 @@ using System.Linq;
 using System.Text;
 using Monocle;
 
-namespace OldSkull.Menu.Buttons
+namespace OldSkull.Menu
 {
     class MenuButton : Entity
     {
         
         private Action action;
-        private Image image;
+        public Image image { get; private set; }
+
         public MenuButton(string imageName, Action action)
+            :base(1)
         {
             image = new Image(GameDemo.Atlas[imageName]);
+            image.CenterOrigin();
+            Add(image);
             this.action = action;
+        }
+
+        public void press()
+        {
+            if (action!=null) action();
         }
 
     }

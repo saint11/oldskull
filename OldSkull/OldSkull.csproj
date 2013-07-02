@@ -53,6 +53,8 @@
     <Compile Include="GenericEntities\ColorBackground.cs" />
     <Compile Include="Input\KeyboardInput.cs" />
     <Compile Include="Menu\Buttons\MenuButton.cs" />
+    <Compile Include="Menu\Effects\Effect.cs" />
+    <Compile Include="Menu\Effects\SelectorMenuEffects.cs" />
     <Compile Include="Menu\MainMenu.cs" />
     <Compile Include="GameDemo.cs" />
     <Compile Include="Menu\SelectorMenu.cs" />
@@ -101,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Content\Gfx\" />
+    <Folder Include="GameLevel\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Monocle\MonocleEngine\MonocleXNA.csproj">

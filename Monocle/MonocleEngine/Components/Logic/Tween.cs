@@ -142,6 +142,15 @@ namespace Monocle
             return tween;
         }
 
+        static public Tween Scale(Image image, Vector2 targetScale, int duration, Ease.Easer easer, TweenMode tweenMode = TweenMode.Oneshot)
+        {
+            Vector2 startScale = image.Scale;
+            Tween tween = new Tween(tweenMode, easer, duration, true);
+            tween.OnUpdate = (t) => { image.Scale = Vector2.Lerp(startScale, targetScale, t.Eased); };
+            image.Entity.Add(tween);
+            return tween;
+        }
+
         static public Tween Alpha(Image image, float targetAlpha, int duration, Ease.Easer easer, TweenMode tweenMode = TweenMode.Oneshot)
         {
             Entity entity = image.Entity;

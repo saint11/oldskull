@@ -12,7 +12,9 @@ namespace OldSkull
 
     public abstract class KeyboardInput
     {
-        
+        public static float xAxis { get; private set; }
+        public static float yAxis { get; private set; }
+
         public struct KeyAction
         {
             public String name;
@@ -55,6 +57,31 @@ namespace OldSkull
             keyList.Add(newKey);
         }
 
+        public static void AddAxis(Keys up = Keys.Up, Keys down = Keys.Down, Keys left = Keys.Left, Keys right = Keys.Right)
+        {
+            KeyAction newKey;
+
+            newKey = new KeyAction();
+            newKey.name = "up";
+            newKey.key = up;
+            keyList.Add(newKey);
+            
+            newKey = new KeyAction();
+            newKey.name = "down";
+            newKey.key = down;
+            keyList.Add(newKey);
+
+            newKey = new KeyAction();
+            newKey.name = "left";
+            newKey.key = left;
+            keyList.Add(newKey);
+
+            newKey = new KeyAction();
+            newKey.name = "right";
+            newKey.key = right;
+            keyList.Add(newKey);
+
+        }
 
 
         public static void Update()
@@ -67,6 +94,26 @@ namespace OldSkull
 
                 keyList[i] = k;
             }
+            GetAxis();
+        }
+
+        private static void GetAxis()
+        {
+            yAxis = 0;
+            if (checkInput("up"))
+                yAxis += 1;
+            if (checkInput("down"))
+                yAxis -= 1;
+
+            xAxis = 0;
+            if (checkInput("right")) xAxis += 1;
+            if (checkInput("right")) xAxis -= 1;
+        }
+
+        public static void InitDefaultInput()
+        {
+            KeyboardInput.Add("accept", Microsoft.Xna.Framework.Input.Keys.Z);
+            KeyboardInput.AddAxis();
         }
     }
 }

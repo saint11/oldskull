@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://texturepacker.com-->
-<!-- $TexturePacker:SmartUpdate:f10b3d0de00b2e36b6aa55208398c2e1$ -->
+<!-- $TexturePacker:SmartUpdate:967f2575fb89269e1e230f33da940548$ -->
 <TextureAtlas imagePath="atlas.png">
     <SubTexture name="logo" x="128" y="73" width="32" height="32"/>
     <SubTexture name="logo4x" x="0" y="0" width="128" height="128"/>
+    <SubTexture name="menu/exit" x="408" y="24" width="80" height="24"/>
+    <SubTexture name="menu/new" x="408" y="0" width="80" height="24"/>
     <SubTexture name="title" x="128" y="0" width="280" height="73"/>
 </TextureAtlas>
