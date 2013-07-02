@@ -15,7 +15,7 @@ namespace OldSkull.Menu
         public MenuButton(string imageName, Action action)
             :base(1)
         {
-            image = new Image(GameDemo.Atlas[imageName]);
+            image = new Image(OldSkullGame.Atlas[imageName]);
             image.CenterOrigin();
             Add(image);
             this.action = action;

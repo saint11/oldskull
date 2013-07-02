@@ -13,19 +13,20 @@ using System.Collections;
 namespace OldSkull
 {
     
-    public class GameDemo : Engine
+    public class OldSkullGame : Engine
     {
         static public Atlas Atlas { get; private set; }
+        public const string Path = @"Assets\";
 
         static void Main(string[] args)
         {
-            using (GameDemo demo = new GameDemo())
+            using (OldSkullGame demo = new OldSkullGame())
             {
                 demo.Run();
             }
         }
 
-        public GameDemo()
+        public OldSkullGame()
             : base(320, 240, 60f, "OldSkull Demo")
         {
         }
@@ -44,6 +45,5 @@ namespace OldSkull
             KeyboardInput.InitDefaultInput();
             Scene = new Template.MainMenu();
         }
-
     }
 }

@@ -50,13 +50,14 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="GameLevel\PlatformerLevel.cs" />
     <Compile Include="GenericEntities\ColorBackground.cs" />
     <Compile Include="Input\KeyboardInput.cs" />
     <Compile Include="Menu\Buttons\MenuButton.cs" />
     <Compile Include="Menu\Effects\Effect.cs" />
     <Compile Include="Menu\Effects\SelectorMenuEffects.cs" />
     <Compile Include="Menu\MainMenu.cs" />
-    <Compile Include="GameDemo.cs" />
+    <Compile Include="OldSkullGame.cs" />
     <Compile Include="Menu\SelectorMenu.cs" />
     <Compile Include="GenericEntities\Bouncer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,6 +72,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Template\MainMenu.cs" />
+    <Compile Include="GameLevel\PlatformerLevelLoader.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
@@ -94,16 +96,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Content\Atlas\atlas.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Content\Atlas\atlas.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Content\Gfx\" />
-    <Folder Include="GameLevel\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Monocle\MonocleEngine\MonocleXNA.csproj">
@@ -112,6 +113,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Content\Level\1.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Content\Level\OldSkull.oep">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

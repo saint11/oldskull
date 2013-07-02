@@ -12,3 +12,7 @@ C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\bin\WindowsGL\Debug\Monocle
 C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\bin\WindowsGL\Debug\MonocleEngine.pdb
 C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\bin\WindowsGL\Debug\Assets\Content\Atlas\atlas.png
 C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\bin\WindowsGL\Debug\Assets\Content\Atlas\atlas.xml
+C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\obj\x86\Debug\OldSkull.Properties.Resources.resources
+C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\obj\x86\Debug\OldSkull.csproj.GenerateResource.Cache
+C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\bin\WindowsGL\Debug\Assets\Content\Level\1.oel
+C:\Users\Santo 11\Documents\GitHub\oldskull\OldSkull\bin\WindowsGL\Debug\Assets\Content\Level\OldSkull.oep
