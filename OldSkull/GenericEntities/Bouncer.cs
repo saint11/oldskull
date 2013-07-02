@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Monocle;
+using OldSkull.Menu;
 
 namespace OldSkull.GenericEntities
 {
@@ -32,8 +33,24 @@ namespace OldSkull.GenericEntities
 
             if (!KeyboardInput.checkInput("accept"))
             {
-                if (X > playArea.Z + playArea.X - image.Width || X < playArea.X) xSpeed *= -1;
-                if (Y > playArea.W + playArea.Y - image.Height || Y < playArea.Y) ySpeed *= -1;
+                if ( X > playArea.Z + playArea.X - image.Width || X < playArea.X )
+                {
+                    xSpeed *= -1;
+
+                    if ( image.Scale == Vector2.One )
+                    {
+                        SelectorMenuEffects.ScaleYoYo.selectFunction( image );
+                    }
+                }
+                if ( Y > playArea.W + playArea.Y - image.Height || Y < playArea.Y )
+                {
+                    ySpeed *= -1;
+
+                    if ( image.Scale == Vector2.One )
+                    {
+                        SelectorMenuEffects.ScaleYoYo.selectFunction( image );
+                    }
+                }
 
                 X += xSpeed;
                 Y += ySpeed;

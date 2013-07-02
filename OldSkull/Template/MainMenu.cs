@@ -24,7 +24,6 @@ namespace OldSkull.Template
             title.Y = -titleImage.Height;
             Add(title);
             Tween.Position(title, new Vector2(title.X, 10), 100, Ease.BackOut, Tween.TweenMode.Oneshot);
-            //
 
             Add(new SelectorMenu(new string[] {"menu/new","menu/exit"}, new Action[]{newGame,exitGame},SelectorMenuEffects.Scale));
             Add(new GenericEntities.Bouncer(new Image(OldSkullGame.Atlas["logo"]), new Vector4(0, 60, Engine.Instance.Screen.Width, Engine.Instance.Screen.Height - 60)));

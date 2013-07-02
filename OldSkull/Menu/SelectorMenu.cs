@@ -69,8 +69,8 @@ namespace OldSkull.Menu
         {
             for (int i = 0; i < menuButtons.Count(); i++)
             {
-                if (i == selected) effect.selectFunction(menuButtons[i]);
-                else effect.deselectFunction(menuButtons[i]);
+                if (i == selected) effect.selectFunction(menuButtons[i].image);
+                else effect.deselectFunction(menuButtons[i].image);
             }
         }
     }
