@@ -28,7 +28,6 @@ namespace OldSkull.Template
 
             Add(new SelectorMenu(new string[] {"menu/new","menu/exit"}, new Action[]{newGame,exitGame},SelectorMenuEffects.Scale));
             Add(new GenericEntities.Bouncer(new Image(OldSkullGame.Atlas["logo"]), new Vector4(0, 60, Engine.Instance.Screen.Width, Engine.Instance.Screen.Height - 60)));
-
         }
 
         public void newGame()

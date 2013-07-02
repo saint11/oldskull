@@ -10,7 +10,6 @@ namespace OldSkull.GameLevel.Environment
 {
     class Wall : Entity
     {
-
         public Wall(int X, int Y, int W, int H)
             : base(PlatformerLevel.GAMEPLAY_LAYER)
         {

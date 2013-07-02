@@ -30,6 +30,9 @@ namespace OldSkull.GameLevel
         private int width;
         private int height;
 
+        //Level properties
+        public Vector2 Gravity = new Vector2(0,0.1f);
+
         public PlatformerLevel(int width, int height)
         {
             this.width = width;
@@ -39,6 +42,10 @@ namespace OldSkull.GameLevel
             SetLayer(GAMEPLAY_LAYER, gameLayer = new Layer());
             SetLayer(HUD_LAYER, hudLayer = new Layer(BlendState.AlphaBlend, SamplerState.PointClamp, 0));
             SetLayer(PAUSE_LAYER, pauseLayer = new Layer(BlendState.AlphaBlend, SamplerState.PointClamp, 0));
+
+
+            //Test stuff
+            Add(new PlatformerObject(new Vector2(20), new Vector2(20)));
         }
 
         internal void addWall(XmlElement e)
