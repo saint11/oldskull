@@ -9,11 +9,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace OldSkull.GameLevel
 {
-    class PlatformerLevel : Scene
+    public class PlatformerLevel : Scene
     {
         public enum GameMode { Quest };
-
-        private XmlDocument xml;
 
         //Layers
         private Layer bgGameLayer;
@@ -22,20 +20,30 @@ namespace OldSkull.GameLevel
         private Layer pauseLayer;
 
         //Layer Constants
-        public const int BG_GAME_LAYER = -3;
-        public const int GAMEPLAY_LAYER = 0;
-        public const int HUD_LAYER = 3;
-        public const int PAUSE_LAYER = 4;
-        public const int REPLAY_LAYER = 10;
+        public static readonly int BG_GAME_LAYER = -3;
+        public static readonly int GAMEPLAY_LAYER = 0;
+        public static readonly int HUD_LAYER = 3;
+        public static readonly int PAUSE_LAYER = 4;
+        public static readonly int REPLAY_LAYER = 10;
 
-        public PlatformerLevel(XmlDocument levelXml)
+        //LevelLoader Variables
+        private int width;
+        private int height;
+
+        public PlatformerLevel(int width, int height)
         {
-            xml = levelXml;
+            this.width = width;
+            this.height = height;
 
             SetLayer(BG_GAME_LAYER, bgGameLayer = new Layer());
             SetLayer(GAMEPLAY_LAYER, gameLayer = new Layer());
             SetLayer(HUD_LAYER, hudLayer = new Layer(BlendState.AlphaBlend, SamplerState.PointClamp, 0));
             SetLayer(PAUSE_LAYER, pauseLayer = new Layer(BlendState.AlphaBlend, SamplerState.PointClamp, 0));
+        }
+
+        internal void addWall(XmlElement e)
+        {
+            Add(new Environment.Wall(int.Parse(e.Attr("x")), int.Parse(e.Attr("y")), int.Parse(e.Attr("w")), int.Parse(e.Attr("h"))));
         }
     }
 }
