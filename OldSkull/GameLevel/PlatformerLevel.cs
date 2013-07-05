@@ -29,6 +29,10 @@ namespace OldSkull.GameLevel
         //LevelLoader Variables
         private int width;
         private int height;
+        public Vector2 Gravity = new Vector2(0f,0.1f);
+
+        //Lists
+        public List<Entity> Solids {get;private set;}
 
         public PlatformerLevel(int width, int height)
         {
@@ -39,11 +43,20 @@ namespace OldSkull.GameLevel
             SetLayer(GAMEPLAY_LAYER, gameLayer = new Layer());
             SetLayer(HUD_LAYER, hudLayer = new Layer(BlendState.AlphaBlend, SamplerState.PointClamp, 0));
             SetLayer(PAUSE_LAYER, pauseLayer = new Layer(BlendState.AlphaBlend, SamplerState.PointClamp, 0));
+
+            Solids = new List<Entity>();
+
+            //Test Stuff
+            PlatformerObject po = new PlatformerObject(new Vector2(20), new Vector2(20));
+            po.Add(new Image(new Monocle.Texture(20, 20, Color.Brown)));
+            Add(po);
         }
 
         internal void addWall(XmlElement e)
         {
-            Add(new Environment.Wall(int.Parse(e.Attr("x")), int.Parse(e.Attr("y")), int.Parse(e.Attr("w")), int.Parse(e.Attr("h"))));
+            Environment.Wall wall = new Environment.Wall(int.Parse(e.Attr("x")), int.Parse(e.Attr("y")), int.Parse(e.Attr("w")), int.Parse(e.Attr("h")));
+            Add(wall);
+            Solids.Add(wall);
         }
     }
 }

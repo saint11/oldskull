@@ -17,6 +17,10 @@ namespace OldSkull.GenericEntities
         {
             Add(image);
             this.image = image;
+            this.image.CenterOrigin();
+            this.image.X = image.Width / 2;
+            this.image.Y = image.Height / 2;
+
             if (area.X == 0 && area.Y == 0 && area.W == 0 && area.Z == 0) 
                 area = new Vector4(0, 0, Engine.Instance.Screen.Width, Engine.Instance.Screen.Height);
             playArea = area;

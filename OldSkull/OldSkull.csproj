@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="GameLevel\Environment\Wall.cs" />
     <Compile Include="GameLevel\PlatformerLevel.cs" />
+    <Compile Include="GameLevel\PlatformerObject.cs" />
     <Compile Include="GenericEntities\ColorBackground.cs" />
     <Compile Include="Input\KeyboardInput.cs" />
     <Compile Include="Menu\Buttons\MenuButton.cs" />
