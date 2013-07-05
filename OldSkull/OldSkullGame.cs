@@ -15,7 +15,7 @@ namespace OldSkull
     
     public class OldSkullGame : Engine
     {
-        static public Atlas Atlas { get; private set; }
+        static public Atlas Atlas;
         public const string Path = @"Assets\";
 
         static void Main(string[] args)
@@ -27,7 +27,7 @@ namespace OldSkull
         }
 
         public OldSkullGame()
-            : base(320, 240, 60f, "OldSkull Demo")
+            : base(320, 240, 60f, "OldSkull")
         {
         }
 
@@ -43,7 +43,7 @@ namespace OldSkull
             Screen.Scale = 2f;
 
             KeyboardInput.InitDefaultInput();
-            Scene = new Template.MainMenu();
+            Scene = new Isle.MainMenu();
         }
     }
 }

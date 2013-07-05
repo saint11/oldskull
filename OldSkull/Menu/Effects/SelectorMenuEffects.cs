@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace OldSkull.Menu
 {
-    abstract class SelectorMenuEffects
+    public abstract class SelectorMenuEffects
     {
         public static Effect Fade = new Effect(20, 0.5f, 1f, FadeIn, FadeOut);
         public static Effect Scale = new Effect(20, 0.85f, 1.2f, ScaleUp, ScaleDown);

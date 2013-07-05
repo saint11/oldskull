@@ -8,7 +8,7 @@ using Monocle;
 using OldSkull.Menu;
 using OldSkull.GameLevel;
 
-namespace OldSkull.Template
+namespace OldSkull.Isle
 {
     class MainMenu : Menu.MainMenu
     {
@@ -32,7 +32,7 @@ namespace OldSkull.Template
 
         public void newGame()
         {
-            PlatformerLevelLoader.load();
+            OldSkullGame.Instance.Scene = PlatformerLevelLoader.load();
         }
 
         public void exitGame()

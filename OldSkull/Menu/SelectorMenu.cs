@@ -7,7 +7,7 @@ using OldSkull.Menu;
 
 namespace OldSkull.Menu
 {
-    class SelectorMenu : Entity
+    public class SelectorMenu : Entity
     {
         private MenuButton[] menuButtons;
         private int selected =0;

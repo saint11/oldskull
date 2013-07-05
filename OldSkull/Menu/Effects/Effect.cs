@@ -6,7 +6,7 @@ using Monocle;
 
 namespace OldSkull.Menu
 {
-    class Effect
+    public class Effect
     {
         public int duration;
         public float min;

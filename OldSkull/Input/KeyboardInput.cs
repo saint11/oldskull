@@ -101,9 +101,9 @@ namespace OldSkull
         {
             yAxis = 0;
             if (checkInput("up"))
-                yAxis += 1;
-            if (checkInput("down"))
                 yAxis -= 1;
+            if (checkInput("down"))
+                yAxis += 1;
 
             xAxis = 0;
             if (checkInput("right")) xAxis += 1;

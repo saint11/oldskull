@@ -7,10 +7,10 @@ using System.Xml;
 
 namespace OldSkull.GameLevel
 {
-    class PlatformerLevelLoader
+    public class PlatformerLevelLoader
     {
 
-        public static void load()
+        public static PlatformerLevel load()
         {
             PlatformerLevel level;
             XmlDocument xmlDoc = new XmlDocument();
@@ -23,7 +23,7 @@ namespace OldSkull.GameLevel
                 level.addWall(e);
             }
 
-            Engine.Instance.Scene = level;
+            return level;
         }
     }
 }
