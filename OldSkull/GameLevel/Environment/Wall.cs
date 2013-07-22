@@ -8,16 +8,12 @@ using Microsoft.Xna.Framework;
 
 namespace OldSkull.GameLevel.Environment
 {
-    class Wall : Entity
+    class Wall : Solid
     {
 
         public Wall(int X, int Y, int W, int H)
-            : base(PlatformerLevel.GAMEPLAY_LAYER)
+            : base(X,Y,W,H)
         {
-            this.X = X;
-            this.Y = Y;
-
-            Collider = new Hitbox(W,H);
             Image image = new Image(new Texture(W, H, Color.Black));
             Add(image);
         }

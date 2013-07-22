@@ -25,6 +25,7 @@ namespace OldSkull
         }
 
         private static List<KeyAction> keyList = new List<KeyAction>();
+        public static bool Active=true;
 
         public static Boolean checkInput(String name)
         {
@@ -86,15 +87,31 @@ namespace OldSkull
 
         public static void Update()
         {
-            for (int i = 0; i < keyList.Count; i++) // Loop through List with for
+            if (Active)
             {
-                KeyAction k = keyList[i];
-                k.check = Input.Check(k.key);
-                k.pressed = Input.Pressed(k.key);
+                for (int i = 0; i < keyList.Count; i++) // Loop through List with for
+                {
+                    KeyAction k = keyList[i];
+                    k.check = Input.Check(k.key);
+                    k.pressed = Input.Pressed(k.key);
 
-                keyList[i] = k;
+                    keyList[i] = k;
+                }
+                GetAxis();
             }
-            GetAxis();
+            else
+            {
+                for (int i = 0; i < keyList.Count; i++) // Loop through List with for
+                {
+                    KeyAction k = keyList[i];
+                    k.check = false;
+                    k.pressed = false;
+
+                    keyList[i] = k;
+                }
+                xAxis = 0;
+                yAxis = 0;
+            }
         }
 
         private static void GetAxis()
@@ -106,8 +123,10 @@ namespace OldSkull
                 yAxis += 1;
 
             xAxis = 0;
-            if (checkInput("right")) xAxis += 1;
-            if (checkInput("right")) xAxis -= 1;
+            if (checkInput("right"))
+                xAxis += 1;
+            if (checkInput("left"))
+                xAxis -= 1;
         }
 
         public static void InitDefaultInput()

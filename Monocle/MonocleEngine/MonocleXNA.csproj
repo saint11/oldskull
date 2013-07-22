@@ -110,8 +110,8 @@
     <Compile Include="Particles\ParticleSystem.cs" />
     <Compile Include="Particles\ParticleType.cs" />
     <Compile Include="SpecEntity.cs" />
-    <Compile Include="Utils\Calc.cs" />
     <Compile Include="Camera.cs" />
+    <Compile Include="Utils\Calc.cs" />
     <Compile Include="Utils\Collide.cs" />
     <Compile Include="Utils\Commands.cs" />
     <Compile Include="Components\Component.cs" />
