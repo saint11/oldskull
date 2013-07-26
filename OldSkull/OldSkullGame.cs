@@ -10,6 +10,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Collections;
 using OldSkull.Isle;
+using OldSkull.Utils;
 #endregion
 
 namespace OldSkull
@@ -20,6 +21,7 @@ namespace OldSkull
         static public Atlas Atlas;
         static public SpriteData SpriteData;
         static public SpriteFont Font;
+        static public GameStats Stats;
 
         public int PlayTime = 0;
 
@@ -45,6 +47,7 @@ namespace OldSkull
             //SpriteData = new SpriteData(Path + @"Content/Atlas/SpriteData.xml", Atlas);
             Content.RootDirectory = Path + "Content";
             Font = Content.Load<SpriteFont>(@"Misc/pixel");
+            Stats = GameStats.Init();
         }
 
         protected override void Initialize()
@@ -62,7 +65,6 @@ namespace OldSkull
         protected override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-
             PlayTime++;
             if (PlayTime == int.MaxValue) PlayTime = 0;
         }

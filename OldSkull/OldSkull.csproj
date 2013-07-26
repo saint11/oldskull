@@ -76,6 +76,7 @@
     <Compile Include="GameLevel\PlayerObject.cs" />
     <Compile Include="GameLevel\Solid.cs" />
     <Compile Include="GameLevel\SolidGrid.cs" />
+    <Compile Include="Utils\GameStats.cs" />
     <Compile Include="GenericEntities\ColorBackground.cs" />
     <Compile Include="Graphics\ColorBackground.cs" />
     <Compile Include="Graphics\SpriteData.cs" />
