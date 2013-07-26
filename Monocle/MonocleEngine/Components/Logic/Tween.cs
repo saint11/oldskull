@@ -9,7 +9,7 @@ namespace Monocle
     public class Tween : Component
     {
         public enum TweenMode { Persist, Oneshot, Looping, YoyoOneshot, YoyoLooping };
-       
+
         public Action<Tween> OnUpdate;
         public Action<Tween> OnComplete;
         public Action<Tween> OnStart;
@@ -142,7 +142,7 @@ namespace Monocle
             return tween;
         }
 
-        static public Tween Scale(Image image, Vector2 targetScale, int duration, Ease.Easer easer, TweenMode tweenMode = TweenMode.Oneshot)
+        static public Tween Scale(GraphicsComponent image, Vector2 targetScale, int duration, Ease.Easer easer, TweenMode tweenMode = TweenMode.Oneshot)
         {
             Vector2 startScale = image.Scale;
             Tween tween = new Tween(tweenMode, easer, duration, true);
@@ -151,13 +151,22 @@ namespace Monocle
             return tween;
         }
 
-        static public Tween Alpha(Image image, float targetAlpha, int duration, Ease.Easer easer, TweenMode tweenMode = TweenMode.Oneshot)
+        static public Tween Alpha(GraphicsComponent image, float targetAlpha, int duration, Ease.Easer easer, TweenMode tweenMode = TweenMode.Oneshot)
         {
             Entity entity = image.Entity;
-            float startAlpha = image.Color.A/255;
-            Tween tween = new Tween(tweenMode, easer, duration, true); 
-            tween.OnUpdate = (t) => { image.Color.A = (byte) Math.Round(MathHelper.Lerp(startAlpha, targetAlpha, t.Eased)*255.0f); };
+            float startAlpha = image.Color.A / 255;
+            Tween tween = new Tween(tweenMode, easer, duration, true);
+            tween.OnUpdate = (t) => { image.Color.A = (byte)Math.Round(MathHelper.Lerp(startAlpha, targetAlpha, t.Eased) * 255.0f); };
             entity.Add(tween);
+            return tween;
+        }
+
+        public static Tween Position(GraphicsComponent image, Vector2 targetPosition, int duration, Ease.Easer easer, TweenMode tweenMode = TweenMode.Oneshot)
+        {
+            Vector2 startPosition = image.Position;
+            Tween tween = new Tween(tweenMode, easer, duration, true);
+            tween.OnUpdate = (t) => { image.Position = Vector2.Lerp(startPosition, targetPosition, t.Eased); };
+            image.Entity.Add(tween);
             return tween;
         }
     }

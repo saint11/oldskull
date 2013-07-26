@@ -15,7 +15,10 @@ namespace Monocle
         public float Zoom = 1.0f;
         public float Rotation;
         public Color Color = Color.White;
+        public Color FillColor = Color.Transparent;
         public SpriteEffects Effects = SpriteEffects.None;
+        public bool outlined;
+        public Color outlineColor;
 
         public GraphicsComponent(bool active)
             : base(active, true)
@@ -71,8 +74,14 @@ namespace Monocle
         {
             get
             {
-                return Calc.Floor((Entity == null ? Vector2.Zero : Entity.Position) + Position);
+                return Calc.Floor(((Entity == null ? Vector2.Zero : Entity.Position) + Position));
             }
+        }
+
+        public override void Render()
+        {
+            base.Render();
+            if (outlined) DrawOutline(outlineColor, 0);
         }
 
         public abstract int Width { get; }
@@ -80,7 +89,7 @@ namespace Monocle
 
         public void DrawOutline(int offset = 1)
         {
-            DrawOutline(Color.Black, offset);
+            DrawOutline(Color.White, offset);
         }
 
         public void DrawOutline(Color color, int offset = 1)

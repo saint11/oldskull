@@ -34,7 +34,7 @@ namespace OldSkull
         }
 
         public OldSkullGame()
-            : base(340, 220, 60f, "Isle of the Dead")
+            : base(340, 220, 60f, "OldSkull Game")
         {
         }
 
@@ -55,7 +55,7 @@ namespace OldSkull
             KeyboardInput.InitDefaultInput();
             KeyboardInput.Add("jump", Keys.Z);
             KeyboardInput.Add("use", Keys.X);
-            KeyboardInput.Add("pause", Keys.Space);
+            KeyboardInput.Add("pause", Keys.P);
             KeyboardInput.Add("escape", Keys.Escape);
             Scene = new Isle.MainMenu();
         }

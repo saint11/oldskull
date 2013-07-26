@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 
 namespace OldSkull.GameLevel
 {
-    public class PlatformerObject : Entity
+    public class PlatformerObject : PlatformLevelEntity
     {
         //This entity should be abble to detect and act acordingly with
         //all kinds of Collision.

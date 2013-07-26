@@ -32,6 +32,7 @@ namespace OldSkull.GameLevel
         public int Height { get; private set; }
         public Vector2 Gravity = new Vector2(0f,0.1f);
         public string Name { get; private set; }
+        private int tilesetCount = 0;
 
         //Lists
         public List<Entity> Solids {get;private set;}
@@ -87,8 +88,11 @@ namespace OldSkull.GameLevel
 
         public virtual void LoadTileset(XmlElement e)
         {
-            Add(new Graphics.Tileset(-3, e.InnerText, OldSkullGame.Atlas["tilesets/"+e.Attr("tileset")]));
-        }
+            Graphics.Tileset newTile = new Graphics.Tileset(-3, e.InnerText, OldSkullGame.Atlas["tilesets/" + e.Attr("tileset")]);
+            newTile.Depth = tilesetCount;
+            tilesetCount++;
+            Add(newTile);
+        }   
 
         public virtual void LoadEntity(XmlElement e)
         {
@@ -106,8 +110,17 @@ namespace OldSkull.GameLevel
 
             UpdateCamera();
             KeyboardInput.Update();
+
+            if (KeyboardInput.pressedInput("pause"))
+            {
+                OnPause();
+            }
         }
 
+        protected virtual void OnPause()
+        {
+            CurrentState = CurrentState == GameState.Paused ? GameState.Game : GameState.Paused;
+        }
         protected virtual void UpdateCamera()
         {
             if (CameraTarget != null)
