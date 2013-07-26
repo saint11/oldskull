@@ -50,9 +50,9 @@ namespace OldSkull.GameLevel
             side = 1;
         }
 
-        public override void Update()
+        public override void Step()
         {
-            base.Update();
+            base.Step();
 
             TrackPosition();
             UpdateColisions();

@@ -24,7 +24,15 @@ namespace OldSkull.GameLevel
         public override void Update()
         {
             if (HasState(Level.CurrentState))
+            {
                 base.Update();
+                Step();
+            }
+        }
+
+        public virtual void Step()
+        {
+            
         }
 
         public bool HasState(PlatformerLevel.GameState GameState)

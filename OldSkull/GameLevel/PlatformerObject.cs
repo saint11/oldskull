@@ -43,9 +43,9 @@ namespace OldSkull.GameLevel
             Gravity = Level.Gravity;
         }   
 
-        public override void Update()
+        public override void Step()
         {
-            base.Update();
+            base.Step();
             Speed += Gravity;
             
             if (onGround) Speed *= GroundDamping;
