@@ -50,13 +50,13 @@ namespace Monocle
                 throw new Exception("Cannot load until GraphicsDevice has been initialized");
 #endif
 
-#if XNA
+#if OUYA
+            Stream stream = TitleContainer.OpenStream(ImagePath);
+#else
             FileStream stream = new FileStream(ImagePath, FileMode.Open);
+#endif
             Texture2D = Texture2D.FromStream(Engine.Instance.GraphicsDevice, stream);
             stream.Close();
-#else
-            Texture2D = Texture2D.FromFile(Engine.Instance.GraphicsDevice, ImagePath);
-#endif
 
             Rect = new Rectangle(0, 0, Texture2D.Width, Texture2D.Height);
         }

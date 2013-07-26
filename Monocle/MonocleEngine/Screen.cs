@@ -23,7 +23,7 @@ namespace Monocle
         private Rectangle screenRect;
         private Rectangle drawRect;
 
-        public Screen(Engine engine, int width, int height)
+        public Screen(Engine engine, int width, int height, float scale)
         {
             Engine = engine;
             screenRect = drawRect = new Rectangle(0, 0, width, height);

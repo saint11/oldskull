@@ -53,6 +53,9 @@ namespace OldSkull
         protected override void Initialize()
         {
             base.Initialize();
+
+            Sounds.Load(new string[]{"JUMP"});
+
             Screen.Scale = 2f;
 
             KeyboardInput.InitDefaultInput();
@@ -69,5 +72,6 @@ namespace OldSkull
             if (PlayTime == int.MaxValue) PlayTime = 0;
         }
         public static int GetTotalTime() { return ((OldSkullGame)Instance).PlayTime; }
+
     }
 }

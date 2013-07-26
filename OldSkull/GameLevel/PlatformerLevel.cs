@@ -47,6 +47,7 @@ namespace OldSkull.GameLevel
 
         public enum GameState { Game, Paused, Talk, Transition, ExitGame };
         public GameState CurrentState = GameState.Game;
+        private HudElement HudBuilder;
 
         public PlatformerLevel(Vector2 size)
         {
@@ -61,6 +62,14 @@ namespace OldSkull.GameLevel
             SetLayer(PAUSE_LAYER, pauseLayer = new Layer(BlendState.AlphaBlend, SamplerState.PointClamp, 0));
 
             Solids = new List<Entity>();
+
+            BuildHud();
+        }
+
+        protected virtual void BuildHud()
+        {
+            HudBuilder = new HudElement();
+            Add(HudBuilder);
         }
 
         internal virtual void loadLevel(PlatformerLevelLoader ll)

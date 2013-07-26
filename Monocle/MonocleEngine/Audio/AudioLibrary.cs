@@ -5,6 +5,7 @@ using System.Text;
 using System.IO;
 using Microsoft.Xna.Framework.Audio;
 using System.Diagnostics;
+using Microsoft.Xna.Framework;
 
 namespace Monocle
 {
@@ -14,6 +15,7 @@ namespace Monocle
         public bool Loaded { get; private set; }
 
         private Dictionary<string, SoundEffect> sounds;
+        public Dictionary<string, SoundEffectInstance> Instances { get; private set; }
 
         public AudioLibrary(string audioDirectory, bool load = true)
         {
@@ -21,25 +23,66 @@ namespace Monocle
             if (!Directory.Exists(audioDirectory))
                 throw new Exception("The directory does not exist!");
 #endif
-
             AudioDirectory = audioDirectory;
             sounds = new Dictionary<string, SoundEffect>();
+            Instances = new Dictionary<string, SoundEffectInstance>();
 
             if (load)
                 Load();
         }
 
-        public SoundEffect this[string index]
+        public SoundEffectInstance this[string index]
         {
             get
             {
-                return sounds[index];
+                return Instances[index];
             }
         }
 
-        public void Play(string sound, float volume = 1, float pitch = 0, float pan = 0)
+        public void Play(string sound, float x = 160)
         {
-            sounds[sound].Play(volume, pitch, pan);
+            SoundEffectInstance instance = Instances[sound];
+
+            instance.Stop();
+            instance.Pan = MathHelper.Lerp(-.5f, .5f, x / 320f);
+            instance.Play();
+        }
+
+        public void PlayOnce(string sound, float x = 160)
+        {
+            SoundEffectInstance instance = Instances[sound];
+
+            instance.Pan = MathHelper.Lerp(-.5f, .5f, x / 320f);
+            instance.Play();
+        }
+
+        public void Stop(string sound)
+        {
+            Instances[sound].Stop();
+        }
+
+        public void StopAll()
+        {
+            foreach (var kv in Instances)
+                kv.Value.Stop();
+        }
+
+        public void PauseAll()
+        {
+            foreach (var kv in Instances)
+            {
+                if (kv.Value.State == SoundState.Playing)
+                    kv.Value.Pause();
+            }
+        }
+
+        public void ResumeAll()
+        {
+            foreach (var kv in Instances)
+            {
+                if (kv.Value.State == SoundState.Paused)
+                    kv.Value.Resume();
+            }
         }
 
         public void Load()
@@ -48,7 +91,6 @@ namespace Monocle
             if (Loaded)
                 throw new Exception("Audio Library is already loaded!");
 #endif
-
             Loaded = true;
 
             string prefix = AudioDirectory + @"\";
@@ -62,6 +104,7 @@ namespace Monocle
                 stream.Close();
 
                 sounds.Add(name, sound);
+                Instances.Add(name, sound.CreateInstance());
             }
         }
 
@@ -76,7 +119,10 @@ namespace Monocle
 
             foreach (var kv in sounds)
                 kv.Value.Dispose();
+            foreach (var kv in Instances)
+                kv.Value.Dispose();
             sounds.Clear();
+            Instances.Clear();
         }
     }
 }

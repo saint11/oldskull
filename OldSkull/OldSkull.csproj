@@ -69,6 +69,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="GameLevel\Environment\Wall.cs" />
+    <Compile Include="GameLevel\Hud\Box.cs" />
+    <Compile Include="GameLevel\Hud\HudElement.cs" />
     <Compile Include="GameLevel\PlatformLevelEntity.cs" />
     <Compile Include="GameLevel\PlatformerLevel.cs" />
     <Compile Include="GameLevel\PlatformerLevelLoader.cs" />
@@ -76,6 +78,7 @@
     <Compile Include="GameLevel\PlayerObject.cs" />
     <Compile Include="GameLevel\Solid.cs" />
     <Compile Include="GameLevel\SolidGrid.cs" />
+    <Compile Include="Graphics\ProgressBar.cs" />
     <Compile Include="Utils\GameStats.cs" />
     <Compile Include="GenericEntities\ColorBackground.cs" />
     <Compile Include="Graphics\ColorBackground.cs" />
@@ -103,6 +106,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Template\MainMenu.cs" />
+    <Compile Include="Utils\Sounds.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
@@ -131,6 +135,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Content\Atlas\atlas.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Content\Sfx\JUMP.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Icon.ico" />

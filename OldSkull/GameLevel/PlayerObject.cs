@@ -121,7 +121,7 @@ namespace OldSkull.GameLevel
 
                     if (KeyboardInput.pressedInput("jump"))
                     {
-                        if (onGround) Speed.Y = -3.8f;
+                        OnJump();
                     }
                     else if (!KeyboardInput.checkInput("jump") && (Speed.Y < 0))
                     {
@@ -177,8 +177,18 @@ namespace OldSkull.GameLevel
             }
         }
 
+        protected virtual void OnJump()
+        {
+            if (onGround)
+            {
+                Speed.Y = -3.8f;
+                Utils.Sounds.Play("jump");
+            }
+        }
+
         protected virtual void OnPressedUp()
         {
+
         }
 
         protected virtual void OnCrouching()
